@@ -10,7 +10,7 @@ module.exports.handler = async () => {
       statusCode: 200,
       body: JSON.stringify(
         {
-          message: 'Read Buildings v1 - A Ok!',
+          message: 'Read v1 - A Ok!',
           region: process.env.AWS_REGION,
           data: {
             buildings: response.rows || [],
@@ -23,11 +23,7 @@ module.exports.handler = async () => {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify(
-        { message: 'Read Buildings v2 - Error!', region: process.env.AWS_REGION, error: error },
-        null,
-        2
-      ),
+      body: JSON.stringify({ message: 'Read v2 - Error!', region: process.env.AWS_REGION, error: error }, null, 2),
     };
   } finally {
     client.release();

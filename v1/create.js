@@ -17,7 +17,7 @@ module.exports.handler = async (event, context) => {
       statusCode: 200,
       body: JSON.stringify(
         {
-          message: 'Create Buildings v1 - A Ok!',
+          message: 'Create v1 - A Ok!',
           region: process.env.AWS_REGION,
           provider: fromProvider(process.env.AWS_REGION, 'AWS'),
           data: {
@@ -33,11 +33,7 @@ module.exports.handler = async (event, context) => {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify(
-        { message: 'Create Buildings v1 - Error!', region: process.env.AWS_REGION, error: error },
-        null,
-        2
-      ),
+      body: JSON.stringify({ message: 'Create v1 - Error!', region: process.env.AWS_REGION, error: error }, null, 2),
     };
   } finally {
     client.release();
