@@ -17,15 +17,15 @@ functions:
       - httpApi:
           path: /
           method: GET
-  readbuildings:
-    handler: v1/readbuildings.handler
+  read:
+    handler: v1/read.handler
     events:
       - httpApi:
-          path: /readbuildings
+          path: /read
           method: GET
-  createbuilding:
-    handler: v1/createbuilding.handler
+  create:
+    handler: v1/create.handler
     events:
       - httpApi:
-          path: /createbuilding
+          path: /create
           method: POST
