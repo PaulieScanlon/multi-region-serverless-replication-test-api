@@ -1,11 +1,10 @@
 const { getDB } = require('../pg');
 const { fromProvider } = require('cloud-regions-country-flags');
 
-module.exports.handler = async (event, context) => {
+module.exports.handler = async (event) => {
   const client = await getDB().connect();
 
-  //   const { type, color } = JSON.parse(event.body);
-  const { type, color } = event;
+  const { type, color } = event.queryStringParameters;
 
   try {
     const response = await client.query('INSERT INTO buildings (type, color) VALUES($1, $2) RETURNING id', [
