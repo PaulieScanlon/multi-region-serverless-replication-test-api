@@ -23,7 +23,8 @@
   },
   "homepage": "https://github.com/PaulieScanlon/multi-region-severeless-replication-test-api#readme",
   "dependencies": {
-    "cloud-regions-country-flags": "^1.1.2"
+    "cloud-regions-country-flags": "^1.1.2",
+    "pg": "^8.10.0"
   },
   "devDependencies": {
     "serverless": "^3.28.1"

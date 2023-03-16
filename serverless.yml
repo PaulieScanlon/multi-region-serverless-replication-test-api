@@ -17,3 +17,9 @@ functions:
       - httpApi:
           path: /
           method: GET
+  create-building:
+    handler: v1/create-building.handler
+    events:
+      - httpApi:
+          path: /create-building
+          method: POST
