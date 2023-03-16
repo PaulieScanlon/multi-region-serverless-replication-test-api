@@ -5,9 +5,11 @@ module.exports.handler = async (event) => {
   const client = await getDB().connect();
 
   const { type, color } = event.queryStringParameters;
+  const date = new Date();
 
   try {
-    const response = await client.query('INSERT INTO buildings (type, color) VALUES($1, $2) RETURNING id', [
+    const response = await client.query('INSERT INTO buildings (date, type, color) VALUES($1, $2, $3) RETURNING id', [
+      date,
       type,
       color,
     ]);
@@ -21,6 +23,7 @@ module.exports.handler = async (event) => {
           provider: fromProvider(process.env.AWS_REGION, 'AWS'),
           data: {
             id: response.rows[0].id,
+            date: date,
             type: type,
             color: color,
           },
