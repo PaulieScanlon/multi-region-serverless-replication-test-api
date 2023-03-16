@@ -9,8 +9,8 @@ This repo is for multi-region AWS Lambda Functions used in the [TBD](https://) a
     - [/](https://cj1qlvv5jk.execute-api.eu-central-1.amazonaws.com/)
   - us-east-1
     - [/](https://7te35k1d7h.execute-api.us-east-1.amazonaws.com/)
-  - us-west-1
-    - [/](https://qbghq3xq2k.execute-api.us-west-1.amazonaws.com/)
+  - us-west-2
+    - [/](https://qbghq3xq2k.execute-api.us-west-2.amazonaws.com/)
 - 🚀 APP [https://](https://)
 
 ### Deployment (Prod)
