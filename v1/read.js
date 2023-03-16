@@ -1,4 +1,5 @@
 const { getDB } = require('../pg');
+const { fromProvider } = require('cloud-regions-country-flags');
 
 module.exports.handler = async () => {
   const client = await getDB().connect();
@@ -12,6 +13,7 @@ module.exports.handler = async () => {
         {
           message: 'Read v1 - A Ok!',
           region: process.env.AWS_REGION,
+          provider: fromProvider(process.env.AWS_REGION, 'AWS'),
           data: {
             buildings: response.rows || [],
           },
