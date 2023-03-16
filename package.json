@@ -1,0 +1,31 @@
+{
+  "name": "multi-region-serverless-replication-test-api",
+  "version": "1.0.0",
+  "description": "A test api for CockroachDB multi-region serverless replication",
+  "main": "index.js",
+  "scripts": {
+    "us-east-1": "serverless deploy --region us-east-1",
+    "eu-central-1": "serverless deploy --region eu-central-1",
+    "us-west-1": "serverless deploy --region us-west-1",
+    "deploy": "npm run us-east-1 && npm run eu-central-1 && npm run us-west-1",
+    "deploy:quick": "npm run us-east-1",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulieScanlon/multi-region-severeless-replication-test-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/PaulieScanlon/multi-region-severeless-replication-test-api/issues"
+  },
+  "homepage": "https://github.com/PaulieScanlon/multi-region-severeless-replication-test-api#readme",
+  "dependencies": {
+    "cloud-regions-country-flags": "^1.1.2"
+  },
+  "devDependencies": {
+    "serverless": "^3.28.1"
+  }
+}
