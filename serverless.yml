@@ -17,6 +17,12 @@ functions:
       - httpApi:
           path: /
           method: GET
+  read-buildings:
+    handler: v1/read-buildings.handler
+    events:
+      - httpApi:
+          path: /read-buildings
+          method: GET
   create-building:
     handler: v1/create-building.handler
     events:
