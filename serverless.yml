@@ -18,14 +18,14 @@ functions:
           path: /
           method: GET
   readbuildings:
-    handler: v1/read-buildings.handler
+    handler: v1/readbuildings.handler
     events:
       - httpApi:
-          path: /read-buildings
+          path: /readbuildings
           method: GET
   createbuilding:
-    handler: v1/create-building.handler
+    handler: v1/createbuilding.handler
     events:
       - httpApi:
-          path: /create-building
+          path: /createbuilding
           method: POST
