@@ -11,6 +11,12 @@ provider:
     DATABASE_URL: ${env:DATABASE_URL}
 
 functions:
+  test:
+    handler: v1/test.handler
+    events:
+      - httpApi:
+          path: /test
+          method: GET
   api:
     handler: v1/index.handler
     events:
