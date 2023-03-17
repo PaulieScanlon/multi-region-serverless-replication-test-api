@@ -41,3 +41,9 @@ functions:
       - httpApi:
           path: /delete
           method: DELETE
+  update:
+    handler: v1/update.handler
+    events:
+      - httpApi:
+          path: /update
+          method: POST
