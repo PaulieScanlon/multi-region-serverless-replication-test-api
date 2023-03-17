@@ -15,7 +15,7 @@ module.exports.handler = async (event) => {
           message: 'Delete v1 - A Ok!',
           region: process.env.AWS_REGION,
           provider: fromProvider(process.env.AWS_REGION, 'AWS'),
-          id: response.rows[0].id,
+          id,
         },
         null,
         2
