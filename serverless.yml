@@ -34,10 +34,10 @@ functions:
     events:
       - httpApi:
           path: /create
-          method: GET
+          method: POST
   delete:
     handler: v1/delete.handler
     events:
       - httpApi:
           path: /delete
-          method: GET
+          method: DELETE

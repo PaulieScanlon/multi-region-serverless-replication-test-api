@@ -4,7 +4,8 @@ const { fromProvider } = require('cloud-regions-country-flags');
 module.exports.handler = async (event) => {
   const client = await getDB().connect();
 
-  const { type, color } = event.queryStringParameters;
+  const { type, color } = JSON.parse(event.body);
+
   const date = new Date();
 
   try {

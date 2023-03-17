@@ -3,7 +3,7 @@ const { getDB } = require('../pg');
 module.exports.handler = async (event) => {
   const client = await getDB().connect();
 
-  const { id } = event.queryStringParameters;
+  const { id } = JSON.parse(event.body);
 
   try {
     await client.query('DELETE FROM buildings WHERE id = $1', [id]);
