@@ -14,9 +14,7 @@ module.exports.handler = async () => {
           message: 'Read v1 - A Ok!',
           region: process.env.AWS_REGION,
           provider: fromProvider(process.env.AWS_REGION, 'AWS'),
-          data: {
-            buildings: response.rows.sort((a, b) => b.date - a.date) || [],
-          },
+          buildings: response.rows.sort((a, b) => b.date - a.date) || [],
         },
         null,
         2
