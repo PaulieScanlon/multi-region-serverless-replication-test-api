@@ -24,7 +24,11 @@ module.exports.handler = async (event) => {
   } catch (error) {
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: 'Delete v1 - Error!', region: process.env.AWS_REGION, error: error }, null, 2),
+      body: JSON.stringify(
+        { message: 'Delete v1 - Error!', region: process.env.AWS_REGION, error: error.message },
+        null,
+        2
+      ),
     };
   } finally {
     client.release();
