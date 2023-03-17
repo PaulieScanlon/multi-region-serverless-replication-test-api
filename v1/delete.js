@@ -1,4 +1,5 @@
 const { getDB } = require('../pg');
+const { fromProvider } = require('cloud-regions-country-flags');
 
 module.exports.handler = async (event) => {
   const client = await getDB().connect();
