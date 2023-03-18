@@ -4,16 +4,15 @@ const { fromProvider } = require('cloud-regions-country-flags');
 module.exports.handler = async (event) => {
   const client = await getDB().connect();
 
-  const { type, color } = JSON.parse(event.body);
+  const { type, color, depth } = JSON.parse(event.body);
 
   const date = new Date();
 
   try {
-    const response = await client.query('INSERT INTO buildings (date, type, color) VALUES($1, $2, $3) RETURNING id', [
-      date,
-      type,
-      color,
-    ]);
+    const response = await client.query(
+      'INSERT INTO buildings (date, type, color, depth) VALUES($1, $2, $3, $4) RETURNING id',
+      [date, type, color, depth]
+    );
 
     return {
       statusCode: 200,
@@ -27,6 +26,7 @@ module.exports.handler = async (event) => {
             date: date,
             type: type,
             color: color,
+            depth: depth,
           },
         },
         null,
